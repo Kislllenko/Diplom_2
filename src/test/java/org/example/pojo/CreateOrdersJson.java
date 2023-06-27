@@ -1,20 +1,20 @@
 package org.example.pojo;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class CreateOrdersJson {
 
-    private List<String> ingredients;
+    private final String[] ingredients;
 
-    public CreateOrdersJson(List<String> ingredients) {
+    public CreateOrdersJson(String[] ingredients) {
         this.ingredients = ingredients;
     }
 
-    public List<String> getIngredients() {
-        return ingredients;
-    }
+//    public CreateOrdersJson() {
+//    }
 
-    public void setIngredients(List<String> ingredients) {
-        this.ingredients = ingredients;
+    @Override
+    public String toString() {
+        return "ingredients: " + Arrays.toString(ingredients);
     }
 }
