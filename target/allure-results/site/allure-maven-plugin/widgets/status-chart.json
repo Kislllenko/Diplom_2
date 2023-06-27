@@ -1,0 +1,131 @@
+[ {
+  "uid" : "6c76df370280a983",
+  "name" : "Логин с неверным логином и паролем",
+  "time" : {
+    "start" : 1687898495595,
+    "stop" : 1687898501647,
+    "duration" : 6052
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "81cf3be0beb1561",
+  "name" : "Cоздание уникального пользователя",
+  "time" : {
+    "start" : 1687898510742,
+    "stop" : 1687898511680,
+    "duration" : 938
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "526e4a2abceef99a",
+  "name" : "Создание пользователя с одним не заполненным обязательным полем",
+  "time" : {
+    "start" : 1687898511682,
+    "stop" : 1687898511929,
+    "duration" : 247
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "777d10eee34b15f4",
+  "name" : "Создание пользователя, который уже зарегистрирован",
+  "time" : {
+    "start" : 1687898511931,
+    "stop" : 1687898513122,
+    "duration" : 1191
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "737111bfe1d77837",
+  "name" : "Получение заказов конкретного пользователя. Не авторизованный пользователь.",
+  "time" : {
+    "start" : 1687898515419,
+    "stop" : 1687898517725,
+    "duration" : 2306
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "10ddad217066e129",
+  "name" : "Логин под существующим пользователем",
+  "time" : {
+    "start" : 1687898501804,
+    "stop" : 1687898503091,
+    "duration" : 1287
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6db7c95fb4b573d0",
+  "name" : "Создание заказа без авторизации и с ингредиентами",
+  "time" : {
+    "start" : 1687898505395,
+    "stop" : 1687898506757,
+    "duration" : 1362
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bdce8298e2533241",
+  "name" : "Изменение данных пользователя без авторизации",
+  "time" : {
+    "start" : 1687898519481,
+    "stop" : 1687898520678,
+    "duration" : 1197
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3c688f895aff2f5f",
+  "name" : "Получение заказов конкретного пользователя. Авторизованный пользователь.",
+  "time" : {
+    "start" : 1687898513127,
+    "stop" : 1687898515414,
+    "duration" : 2287
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "79688059121c37d2",
+  "name" : "Создание заказа c невалидным хешем ингредиента",
+  "time" : {
+    "start" : 1687898506764,
+    "stop" : 1687898508516,
+    "duration" : 1752
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c0d7e1856d258007",
+  "name" : "Создание заказа без ингредиентов",
+  "time" : {
+    "start" : 1687898508520,
+    "stop" : 1687898510735,
+    "duration" : 2215
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f7d5a0f809cf41c2",
+  "name" : "Изменение данных пользователя",
+  "time" : {
+    "start" : 1687898517731,
+    "stop" : 1687898519478,
+    "duration" : 1747
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d3963009106650f4",
+  "name" : "Создание заказа с авторизацией и с ингредиентами",
+  "time" : {
+    "start" : 1687898503103,
+    "stop" : 1687898505392,
+    "duration" : 2289
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
