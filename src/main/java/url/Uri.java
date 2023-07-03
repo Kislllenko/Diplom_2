@@ -1,4 +1,4 @@
-package org.example.url;
+package url;
 
 public class Uri {
 

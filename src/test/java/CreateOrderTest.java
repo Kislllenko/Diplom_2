@@ -1,31 +1,15 @@
-package org.example;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import org.example.code_api_data.Orders;
-import org.example.code_api_data.User;
-import org.example.code_api_data.UserResponse;
-import org.example.pojo.CreateOrdersJson;
-import org.example.pojo.CreateUserJson;
-import org.junit.After;
-import org.junit.Before;
+import requests.Orders;
+import requests.User;
+import requests.UserResponse;
+import pojo.CreateOrdersJson;
 import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 @DisplayName("Создание заказа")
-public class CreateOrderTest {
-
-    CreateUserJson createUser = new CreateUserJson("kislenko-s@yandex.ru", "1Qwe%", "Kislenko");
-
-    private final String BURGER_NAME = "Бессмертный флюоресцентный бургер";
-
-    private final String[] INGREDIENTS = {"61c0c5a71d1f82001bdaaa6d","61c0c5a71d1f82001bdaaa6f"};
-
-    @Before
-    public void setUp() {
-        User.create(createUser);
-    }
+public class CreateOrderTest extends BaseTest{
 
     @Test
     @DisplayName("Создание заказа с авторизацией и с ингредиентами")
@@ -76,11 +60,4 @@ public class CreateOrderTest {
         response.then().assertThat().statusCode(500);
     }
 
-    @After
-    public void tearDown() {
-
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
-
-        User.delete(userAccessToken);
-    }
 }

@@ -1,9 +1,9 @@
-package org.example.code_api_data;
+package requests;
 
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.example.url.Uri;
+import url.Uri;
 
 public class User {
 

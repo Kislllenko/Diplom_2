@@ -1,4 +1,4 @@
-package org.example.code_api_data;
+package requests;
 
 public class UserResponse {
 

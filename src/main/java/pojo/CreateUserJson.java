@@ -1,4 +1,4 @@
-package org.example.pojo;
+package pojo;
 
 public class CreateUserJson {
 

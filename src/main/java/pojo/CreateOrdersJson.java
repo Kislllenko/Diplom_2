@@ -1,4 +1,4 @@
-package org.example.pojo;
+package pojo;
 
 import java.util.Arrays;
 

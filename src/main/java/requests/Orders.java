@@ -1,10 +1,10 @@
-package org.example.code_api_data;
+package requests;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.qameta.allure.Step;
-import org.example.pojo.CreateOrdersJson;
-import org.example.url.Uri;
+import pojo.CreateOrdersJson;
+import url.Uri;
 
 public class Orders {
 

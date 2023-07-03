@@ -1,11 +1,9 @@
-package org.example;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import org.example.code_api_data.User;
-import org.example.code_api_data.UserResponse;
-import org.example.pojo.CreateUserJson;
+import requests.User;
+import requests.UserResponse;
+import pojo.CreateUserJson;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.equalTo;
