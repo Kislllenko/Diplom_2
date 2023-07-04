@@ -2,7 +2,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import requests.Orders;
-import requests.User;
+import requests.UserRequests;
 import requests.UserResponse;
 import pojo.CreateOrdersJson;
 import org.junit.Test;
@@ -16,9 +16,9 @@ public class GetUsersOrderTest extends BaseTest {
     @Description("Список заказов получен, код ответа 200 OK")
     public void getUsersOrders() {
 
-        User.login(createUser);
+        UserRequests.login(createUser);
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
         Orders.createOrder(new CreateOrdersJson(INGREDIENTS), userAccessToken);
 
@@ -31,9 +31,9 @@ public class GetUsersOrderTest extends BaseTest {
     @Description("Список заказов не получен, код ответа 401 Unauthorized")
     public void getUsersOrdersWithoutAuthorization() {
 
-        User.login(createUser);
+        UserRequests.login(createUser);
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
         Orders.createOrder(new CreateOrdersJson(INGREDIENTS), userAccessToken);
 

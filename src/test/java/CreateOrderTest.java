@@ -2,7 +2,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import requests.Orders;
-import requests.User;
+import requests.UserRequests;
 import requests.UserResponse;
 import pojo.CreateOrdersJson;
 import org.junit.Test;
@@ -16,9 +16,9 @@ public class CreateOrderTest extends BaseTest{
     @Description("Заказ успешно создан код ответа 200 OK")
     public void createOrder() {
 
-        User.login(createUser);
+        UserRequests.login(createUser);
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
         Response response = Orders.createOrder(new CreateOrdersJson(INGREDIENTS), userAccessToken);
         response.then().assertThat().statusCode(200).and().body("name", equalTo(BURGER_NAME));
@@ -38,9 +38,9 @@ public class CreateOrderTest extends BaseTest{
     @Description("Заказ не создан код ответа 400 Bad Request")
     public void createOrderWithoutIngredients() {
 
-        User.login(createUser);
+        UserRequests.login(createUser);
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
         Response response = Orders.createOrder(new CreateOrdersJson(null), userAccessToken);
         response.then().assertThat().statusCode(400)
@@ -52,9 +52,9 @@ public class CreateOrderTest extends BaseTest{
     @Description("Заказ не создан код ответа 500 Internal Server Error")
     public void createOrderWithWrongHash() {
 
-        User.login(createUser);
+        UserRequests.login(createUser);
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
         Response response = Orders.createOrder(new CreateOrdersJson(new String[]{"24323"}), userAccessToken);
         response.then().assertThat().statusCode(500);

@@ -1,7 +1,7 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import requests.User;
+import requests.UserRequests;
 import requests.UserResponse;
 import org.junit.Test;
 import static org.hamcrest.Matchers.equalTo;
@@ -13,11 +13,11 @@ public class EditUserDataTest extends BaseTest {
     @DisplayName("Изменение данных пользователя")
     @Description("Данные успешно изменены код ответа 200")
     public void editUserData() {
-        User.login(createUser);
+        UserRequests.login(createUser);
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
-        Response response = User.editWithToken(userAccessToken, updateUser);
+        Response response = UserRequests.editWithToken(userAccessToken, updateUser);
         response.then().assertThat().statusCode(200).and()
                 .body("success", equalTo(true));
     }
@@ -27,7 +27,7 @@ public class EditUserDataTest extends BaseTest {
     @Description("Если попытаться изменить данные без авторизации, то запрос возвращает ошибку 401")
     public void editUserDataWithoutToken() {
 
-        User.editWithoutToken(updateUser)
+        UserRequests.editWithoutToken(updateUser)
                 .then()
                 .statusCode(401).and()
                 .body("success", equalTo(false))

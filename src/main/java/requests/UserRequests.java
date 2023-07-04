@@ -5,7 +5,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import url.Uri;
 
-public class User {
+public class UserRequests {
 
     @Step("POST запрос для создания пользователя")
     public static Response create(Object body) {

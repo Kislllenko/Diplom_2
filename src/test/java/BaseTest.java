@@ -1,5 +1,5 @@
 import pojo.CreateUserJson;
-import requests.User;
+import requests.UserRequests;
 import requests.UserResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -13,15 +13,13 @@ public class BaseTest {
     CreateUserJson wrongUser = new CreateUserJson("kislenko-s@yandex.ru", "1Qwe%22", "KislenkoS");
 
     @Before
-    public void setUp() {
-            User.create(createUser);
-        }
+    public void setUp() { UserRequests.create(createUser); }
 
     @After
     public void tearDown() {
 
-        String userAccessToken = User.login(createUser).then().extract().response().as(UserResponse.class).getToken();
+        String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
 
-        User.delete(userAccessToken);
+        UserRequests.delete(userAccessToken);
     }
 }
