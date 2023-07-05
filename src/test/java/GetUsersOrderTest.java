@@ -17,13 +17,10 @@ public class GetUsersOrderTest extends BaseTest {
     public void getUsersOrders() {
 
         UserRequests.login(createUser);
-
         String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
-
         Orders.createOrder(new CreateOrdersJson(INGREDIENTS), userAccessToken);
-
         Response response = Orders.getOrders(userAccessToken);
-        response.then().assertThat().statusCode(200);
+        response.then().assertThat().statusCode(200).body("success", equalTo(true));
     }
 
     @Test
@@ -32,11 +29,8 @@ public class GetUsersOrderTest extends BaseTest {
     public void getUsersOrdersWithoutAuthorization() {
 
         UserRequests.login(createUser);
-
         String userAccessToken = UserRequests.login(createUser).then().extract().response().as(UserResponse.class).getToken();
-
         Orders.createOrder(new CreateOrdersJson(INGREDIENTS), userAccessToken);
-
         Response response = Orders.getOrdersWithoutAuthorization();
         response.then().assertThat().statusCode(401).and().body("message", equalTo("You should be authorised"));
     }
