@@ -1,0 +1,180 @@
+{
+  "uid" : "d3963009106650f4",
+  "name" : "Создание заказа с авторизацией и с ингредиентами",
+  "fullName" : "org.example.CreateOrderTest.createOrder",
+  "historyId" : "98ee10c6b26ebc048fe1a886a9b5fa7c",
+  "time" : {
+    "start" : 1687898503103,
+    "stop" : 1687898505392,
+    "duration" : 2289
+  },
+  "description" : "Заказ успешно создан код ответа 200 OK",
+  "descriptionHtml" : "<p>Заказ успешно создан код ответа 200 OK</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Заказ успешно создан код ответа 200 OK",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "POST запрос для создания пользователя",
+      "time" : {
+        "start" : 1687898503103,
+        "stop" : 1687898503422,
+        "duration" : 319
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "body",
+        "value" : "org.example.pojo.CreateUserJson@7b38db21"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST запрос для логина пользователя",
+      "time" : {
+        "start" : 1687898503422,
+        "stop" : 1687898503763,
+        "duration" : 341
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "body",
+        "value" : "org.example.pojo.CreateUserJson@7b38db21"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST запрос для логина пользователя",
+      "time" : {
+        "start" : 1687898503763,
+        "stop" : 1687898504076,
+        "duration" : 313
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "body",
+        "value" : "org.example.pojo.CreateUserJson@7b38db21"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST запрос для создания заказа c авторизацией",
+      "time" : {
+        "start" : 1687898504089,
+        "stop" : 1687898504659,
+        "duration" : 570
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "body",
+        "value" : "ingredients: [61c0c5a71d1f82001bdaaa6d, 61c0c5a71d1f82001bdaaa6f]"
+      }, {
+        "name" : "userAccessToken",
+        "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWI0OTg3OWVkMjgwMDAxYjM0MDYwNyIsImlhdCI6MTY4Nzg5ODUwNCwiZXhwIjoxNjg3ODk5NzA0fQ.R8tz7hgoaCjyxKTyLxUir1mOBvrG9PZ6OGErVPBvPtA"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST запрос для логина пользователя",
+      "time" : {
+        "start" : 1687898504695,
+        "stop" : 1687898505029,
+        "duration" : 334
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "body",
+        "value" : "org.example.pojo.CreateUserJson@7b38db21"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "DELETE запрос для удаления пользователя",
+      "time" : {
+        "start" : 1687898505030,
+        "stop" : 1687898505392,
+        "duration" : 362
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "userAccessToken",
+        "value" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OWI0OTg3OWVkMjgwMDAxYjM0MDYwNyIsImlhdCI6MTY4Nzg5ODUwNSwiZXhwIjoxNjg3ODk5NzA1fQ.mXBXg72rH9ou_L23-OIUpKAK8bXgQRuhtynOC3oGPsQ"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "org.example"
+  }, {
+    "name" : "testClass",
+    "value" : "org.example.CreateOrderTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "createOrder"
+  }, {
+    "name" : "suite",
+    "value" : "Создание заказа"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro-Sergej.local"
+  }, {
+    "name" : "thread",
+    "value" : "40282@MacBook-Pro-Sergej.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d3963009106650f4.json",
+  "parameterValues" : [ ]
+}
